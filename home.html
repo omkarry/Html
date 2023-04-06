@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Lexicon Home Page">
+    <meta name="keywords" content="Lexicon">
+    <meta name="author" content="Omkar Yadav">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Lexicon</title>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="\staticfiles\css\home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c188e2afe4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="menu-icon">
+        <i class="fa fa-bars fa-2x" style="color: #fff; width: 20px; height: 20px;"></i>
+      </div>
+
+      <div class="profile">
+        <div>
+          <img src="/staticfiles/images/profile.jpg" alt="Profile Picture" width="50px" height="40px">
+        </div>
+        <div style="margin-top: 5px;">
+          <img src="/staticfiles/images/profile.jpg" alt="Profile Picture" width="20px" height="20px">
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  
+            style="background-color: rgb(22, 173, 233); border: none;">SupplierTest11
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div id="navbar">
+      <div>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+      <div style="margin-top: 5px; padding-right: 5px;">
+        <img src="/staticfiles/images/pic1.jpg" alt="Profile Picture" width="40px" height="30px">
+        <img src="/staticfiles/images/pic2.jpg" alt="Profile Picture" width="40px" height="30px">
+        <img src="/staticfiles/images/pic3.jpg" alt="Profile Picture" width="40px" height="30px">
+      </div>
+    </div>
+
+    <div class="tab-with-pagination">
+      <div>
+        <div class="tab">
+          <button class="tablinks">Draft</button>
+          <button class="tablinks active">Open</button>
+          <button class="tablinks">Closed</button>
+          <button class="tablinks">All</button>
+        </div>
+      </div>
+
+      <div>
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1"><i class="fa fa-less-than fa-regular"></i></a>
+          </li>
+          <li class="page-h6item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#"><i class="fa fa-greater-than"></i></a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">50</i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" style="width: 100%; position: absolute;">
+      <div class="row" style="display: flex; justify-content: space-evenly;">
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS II</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>REMOVAL</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>0</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID Tues-test-4</div>
+          
+          <div class="row recall-name">Tues-test-4 </div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>100%</div>
+            <progress value="100" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div>
+              <div class="status">
+                NOT ACKNOWLEDGED
+                <p class="h4 text-success">0</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="status">
+                ACKNOWLEDGED
+                <p class="h4 text-success">1</p>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">1</p>
+            </div>
+
+            <div class="status">
+              IN PROGRESS
+              <p class="h4">0</p>
+            </div>
+
+            <div class="status">
+              TOTAL
+              <p class="h4">1</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS III</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CORRECTION</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>0</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID Tues-third-1</div>
+          
+          <div class="row recall-name">Tues-third-1 </div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>100%</div>
+            <progress value="100" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-success">0</p>
+            </div>
+
+            <div class="status">
+              ACKNOWLEDGED
+              <p class="h4">2</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">2</p>
+            </div>
+
+            <div class="status">
+              IN PROGRESS
+              <p class="h4 text-success">0</p>
+            </div>
+
+            <div class="status">
+              TOTAL
+              <p class="h4">2</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="float: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS II</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>REMOVAL</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>0</h6>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="row status">RECALL ID Tues-2</div>
+          
+          <div class="row recall-name">Tues-2 </div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>0%</div>
+            <progress value="0" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-danger">3</p>
+            </div>
+          
+            <div class="status">
+              ACKNOWLEDGED
+              <p class="h4">0</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">0</p>
+            </div>
+          
+            <div class="status">
+              IN PROGRESS
+              <p class="h4 text-danger">3</p>
+            </div>
+          
+            <div class="status">
+              TOTAL
+              <p class="h4">3</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS II</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CORRECTION</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>46</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID 0422</div>
+          
+          <div class="row recall-name">0422 </div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>100%</div>
+            <progress value="100" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-success">0</p>
+            </div>
+
+            <div class="status">
+              ACKNOWLEDGED
+              <p class="h4">1</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">1</p>
+            </div>
+
+            <div class="status">
+              IN PROGRESS
+              <p class="h4 text-success">0</p>
+            </div>
+
+            <div class="status">
+              TOTAL
+              <p>1</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="display: flex; justify-content: space-evenly;">
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS III</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CORRECTION</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>74</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID Test-send-noti-2</div>
+          
+          <div class="row recall-name">Test-send-noti-2</div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>0%</div>
+            <progress value="0" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+              <div class="status">
+                NOT ACKNOWLEDGED
+                <p class="h4 text-danger">2</p>
+              </div>
+
+              <div class="status">
+                ACKNOWLEDGED
+                <p class="h4">0</p>
+              </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">0</p>
+            </div>
+
+            <div class="status">
+              IN PROGRESS
+              <p class="h4 text-danger">2</p>
+            </div>
+
+            <div class="status">
+              TOTAL
+              <p class="h4">2  </p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS II</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CORRECTION</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>76</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID test-noti-12</div>
+          
+          <div class="row recall-name">test-recall-noti</div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>0%</div>
+            <progress value="0" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-danger">1</p>
+            </div>
+
+            <div class="status">
+              ACKNOWLEDGED
+              <p class="h4">0</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              COMPLETED
+              <p class="h4">0</p>
+            </div>
+
+            <div class="status">
+              IN PROGRESS
+              <p class="h4 text-danger">1</p>
+            </div>
+
+            <div class="status">
+              TOTAL
+              <p class="h4">1</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS III</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>REMOVAL</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>76</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID test-qa-qa-cent-12</div>
+          
+          <div class="row recall-name">test-qa-qa-cent </div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>0%</div>
+            <progress value="0" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div  class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-danger">2</p>
+            </div>
+
+            <div  class="status">
+              ACKNOWLEDGED
+              <p class="h4">0</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div  class="status">
+              COMPLETED
+              <p class="h4">0</p>
+            </div>
+
+            <div  class="status">
+              IN PROGRESS
+              <p class="h4 text-danger">2</p>
+            </div>
+
+            <div  class="status">
+              TOTAL
+              <p class="h4">2</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: space-between;">
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>CLASS II</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-briefcase"></i>
+                <h6>REMOVAL</h6>
+              </div>
+              <div style="align-items: center;">
+                <i class="fa fa-calendar"></i>
+                <h6>77</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row status">RECALL ID test-recall-confirmation-123</div>
+          
+          <div class="row recall-name">test-recall-confirmation</div>
+
+          <div class="row status">PROGRESS INDICATOR</div>
+
+          <div class="row">
+            <div>100%</div>
+            <progress value="100" max="100"></progress>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div class="status">
+              NOT ACKNOWLEDGED
+              <p class="h4 text-success">0</p>
+            </div>
+
+            <div  class="status">
+              ACKNOWLEDGED
+              <p class="h4">2</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; justify-content: space-between;">
+            <div  class="status">
+              COMPLETED
+              <p class="h4">2</p>
+            </div>
+
+            <div  class="status">
+              IN PROGRESS
+              <p class="h4  text-success">0</p>
+            </div>
+
+            <div  class="status">
+              TOTAL
+              <p class="h4">2</p>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary " type="button">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
