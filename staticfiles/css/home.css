@@ -88,6 +88,16 @@ box-shadow: 0 0 15px gray;
 
 progress{
 width: 100%;
+height: 3px;
+background: crimson;
+}
+
+progress::-webkit-progress-bar {
+    background-color: lightblue;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(17, 75, 151) !important;
 }
 
 .row button{
@@ -100,10 +110,34 @@ border-radius: 50px;
     padding: 0 15px 0 0;
 }
 
+.status-row{
+    display: flex;
+    justify-content: space-between;
+}
+
 .recall-name{
     height: 50px; 
     background-color: rgb(202, 202, 202); 
     border-radius: 3px;
     padding: 2px;
+    color: rgb(17, 75, 151);
+}
+
+.complete-percent{
+    text-align: center;
+    color: rgb(17, 75, 151);
+}
+
+.card-row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-size{
+    width: 100%; 
+    position: absolute;
+}
+
+.h6-color{
     color: rgb(17, 75, 151);
 }
