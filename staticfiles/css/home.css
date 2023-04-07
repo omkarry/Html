@@ -1,0 +1,143 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(22, 173, 233);
+    height: 40px;
+}
+
+.menu-icon{
+    margin: 8px;
+}
+
+.profile{
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile img{
+    margin: 0 5px;
+    border-radius: 2px;
+}
+
+#navbar{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    height: 40px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li{
+    padding: 5px;
+    list-style: none;
+}
+
+ul li a{
+    color: #000;
+}
+
+.tab {
+    position: absolute;
+    padding-top: 10px;
+}
+
+.tab button {
+background-color: gray;
+color: white;
+float: left;
+border: none;
+cursor: pointer;
+align-items: center;
+width: 80px;
+height: 30px;
+margin: 5px;
+border-radius: 3px;
+}
+
+.tab button:hover {
+background-color: rgb(0, 174, 255);
+}
+
+.tab button.active {
+background-color:  rgb(0, 174, 255);
+}
+
+.tabcontent {
+display: none;
+padding: 6px 12px;
+border: 1px solid #ccc;
+border-top: none;
+}
+
+.tab-with-pagination{
+display: flex;
+justify-content: space-between;
+}
+
+.pagination{
+margin-top: 10px;
+}
+
+.data-card{
+padding: 10px 40px;
+margin: 5px;
+box-shadow: 0 0 15px gray;
+}
+
+progress{
+width: 100%;
+height: 3px;
+background: crimson;
+}
+
+progress::-webkit-progress-bar {
+    background-color: lightblue;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(17, 75, 151) !important;
+}
+
+.row button{
+float: right;
+border-radius: 50px;
+}
+
+.status{
+    font-size: 10px;
+    padding: 0 15px 0 0;
+}
+
+.status-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recall-name{
+    height: 50px; 
+    background-color: rgb(202, 202, 202); 
+    border-radius: 3px;
+    padding: 2px;
+    color: rgb(17, 75, 151);
+}
+
+.complete-percent{
+    text-align: center;
+    color: rgb(17, 75, 151);
+}
+
+.card-row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-size{
+    width: 100%; 
+    position: absolute;
+}
+
+.h6-color{
+    color: rgb(17, 75, 151);
+}
