@@ -108,7 +108,7 @@ form select{
 }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   left: 0;
   height: 100%;
   width: 250px;
@@ -170,16 +170,15 @@ nav i {
 }
 
 .content-body{
-  position: fixed;
-  margin-left: 250px;
+  position: absolute;
+  margin-left: 150px;
   padding: 5px;
-  width: 100%;
-  height: auto;
+  width: 80%;
 }
 
 .status ul{
   padding-left: 2px;
-  margin-top: 0;
+  margin: 0 20px !important;
 }
 
 .status li {
@@ -190,29 +189,29 @@ nav i {
 }
 
 .tab {
-  margin-top: 10px;
-  margin-bottom: 50px;
   position: absolute;
-  width: 600px;
 }
 
 .tab button {
-  background-color: #ccc;
+  background-color: #e2e2e2;
   float: left;
   border: none;
   cursor: pointer;
   padding: 4px 6px;
   margin: 2px;
+  box-shadow: 0 2px 2px gray inset;
 }
 
 .tab button:hover {
+  box-shadow: none;
   background-color: #fff;
   border-top: 2px solid #230a68;
 }
 
 .tab button.active {
+  box-shadow: none;
   border-top: 2px solid #230a68;
-  background-color: #ccc;
+  background-color: #ffffff;
 }
 
 .tabcontent {
@@ -224,11 +223,12 @@ nav i {
 
 aside{
   float: right;
-  right: 50px;
-  position: fixed;
+  right: 0;
+  position: absolute;
 }
 
 .card {
+  width: 30%;
   background-color: #fff;
   border-radius: 4px;
   padding: 20px;
@@ -259,10 +259,6 @@ h4{
   font-weight: bold;
 }
 
-.card{
-  width: 25%;
-}
-
 .alerts{
   width: 50%;
 }
@@ -273,7 +269,7 @@ h4{
   background-color: rgba(255, 0, 0, 0.4);
   padding: 5px;
   margin: 5px;
-  width: 50%;
+  width: 100%;
 }
 
 .warning-alert{
@@ -282,12 +278,16 @@ h4{
   background-color: rgba(255, 255, 0, 0.4);
   padding: 5px;
   margin: 5px;
-  width: 50%;
+  width: 100%;
 }
 
 .view aside{
   float: right;
   bottom: 0;
-  right: 50px;
-  position: fixed;
+  position: absolute;
+}
+
+.h6{
+  font-size: 11px;
+  margin: 0;
 }
