@@ -395,6 +395,28 @@
       });
       picker.data('daterangepicker').hide = function () {};
       picker.data('daterangepicker').show();
+
+      document.getElementById('lessThanContainer').style.display = 'block';
+      document.getElementById('fullContainer').style.display = 'none';
+      document.getElementById('lessThanBtn').addEventListener('click', function() {
+        document.getElementById('lessThanContainer').style.display = 'block';
+        document.getElementById('fullContainer').style.display = 'none';
+        document.getElementById('numContainers').value = '';
+        document.getElementById('containerType').value = 'Select Container Type';
+        document.getElementById('totalWeight').value = '';
+        document.getElementById('packageType').value = 'Select Package Type';
+        document.getElementById('totalVolume').value = '';
+        document.getElementById('totalQuantity').value = '';
+      });
+
+      document.getElementById('fullBtn').addEventListener('click', function() {
+        document.getElementById('lessThanContainer').style.display = 'none';
+        document.getElementById('fullContainer').style.display = 'block';
+        document.getElementById('lessThanContainerTotalWeight').value = '';
+        document.getElementById('lessThanContainerPackageType').value = 'Select Package Type';
+        document.getElementById('lessThanContainerTotalVolume').value = '';
+        document.getElementById('lessThanContainerTotalQuantity').value = '';
+      });
     </script>
   </body>
 </html>
