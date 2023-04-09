@@ -61,10 +61,14 @@ a{
     border-radius: 0;
 }
 
-.submit-button-align{
+.button-align{
     float: right;
 }
 
+.btn-contact{
+    float: right;
+    border-radius: 50px;
+}
    
 input.search-icon {
     width: 100%;
