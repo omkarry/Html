@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="\staticfiles\css\booking-form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="\staticfiles\js\booking-form.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   </head>
 
   <body>
@@ -363,5 +367,17 @@
         </div>
       </div>
     </div>
+
+    <script>
+      var picker = $('#daterangepicker1').daterangepicker({
+        "parentEl": "#daterangepicker1-container", 
+        "autoApply": true,
+      });
+      picker.on('apply.daterangepicker', function(ev, picker) {
+        $("#daterangepicker-result").html('Selected date range: ' + picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD'));
+      });
+      picker.data('daterangepicker').hide = function () {};
+      picker.data('daterangepicker').show();
+    </script>
   </body>
 </html>
