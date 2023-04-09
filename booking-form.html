@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Booking Form">
+    <meta name="keywords" content="Book shipment">
+    <meta name="author" content="Omkar Yadav">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="\staticfiles\css\booking-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="\staticfiles\js\booking-form.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="back mt-3">
+          <div class="back-btn">
+            <i class="fa fa-arrow-left"></i>
+          </div>
+          <div class="back-to">Back to Dashboard</div>
+        </div>
+      </div>
+      <hr>
+      <div class="container px-5">
+        <div class="row">
+          <form id="booking-form">
+            <div class="row">
+              <div class="col-md-4">
+                <h4><b>Create Booking</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 font-weight-bold">
+                <label><b>Booking Name</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Booking name</label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <input type="text" class="form-control" id="booking-name" placeholder="Description of Shipment" autocomplete="off">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <label><b>Involved Parties</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Consignee <i class="fa fa-question-circle"></i></label>
+                </div>
+                <div class="row mt-2">
+                  <select class="form-control" name="select-consignee" id="select-consignee">
+                  </select>                
+                </div>
+                <div class="row mt-4">
+                  <label>Supplier</label>
+                </div>
+                <div class="row mt-2">
+                  <select class="form-control" name="select-supplier" id="select-supplier">
+                  </select>                
+                </div>
+                <div class="row mt-3">
+                  <a href="#">Create New Supplier</a>
+                </div>
+                <div class="row mt-3">
+                  <label>Incoterms <i class="fa fa-question-circle"></i></label>
+                </div>
+                <div class="row mt-2">
+                  <div class="btn-group col-md-4" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio1" value="EXW" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio1">EXW</label>
+                  
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio2" value="FOB" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio2">FOB</label>
+                  
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio3" value="FCA" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio3">FCA</label>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div><a href="#">Contact us </a>if you can not find your incoterms</div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label><b>Cargo Details</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row ml-3 border-bottom mb-3 mt-4">
+                  <button type="button" class="btn btn-border col-md-6" id="lessThanBtn">Less Than Container</button>
+                  <button type="button" class="btn btn-border col-md-6" id="fullBtn">Full Containers</button>
+                </div>
+                <div id="lessThanContainer">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="totalWeight">Total Weight</label>
+                        <input type="number" class="form-control" id="lessThanContainerTotalWeight" name="totalWeight">
+                      </div>
+                      <div class="mb-3">
+                        <label for="packageType">Package Type</label>
+                        <select class="form-control" name="packageType" id="lessThanContainerPackageType">
+                          <option>Select Package Type</option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="mb-3">
+                        <label for="totalVolume">Total Volume</label>
+                        <input type="number" class="form-control" id="lessThanContainerTotalVolume" name="totalVolume">
+                      </div>
+                      <div class="mb-3">
+                        <label for="totalQuantity">Total Quantity</label>
+                        <input type="number" class="form-control" id="lessThanContainerTotalQuantity" name="totalQuantity">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="fullContainer" style="display: none;">
+                  <div class="row">
+                    <div class="mb-3 col-md-6">
+                      <label for="numContainers">Number of Containers</label>
+                      <input type="number" class="form-control" id="numContainers" name="numContainers">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="containerType">Container Type</label>
+                      <select class="form-control" name="containerType" id="containerType">
+                        <option>Select Container Type</option>
+                        <option>20 ft</option>
+                        <option>40 ft</option>
+                        <option>60 ft</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="totalWeight">Total Weight</label>
+                        <input type="number" class="form-control" id="totalWeight" name="totalWeight">
+                      </div>
+                      <div class="mb-3">
+                        <label for="packageType">PackageType</label>
+                        <select class="form-control" name="packageType" id="packageType">
+                          <option>Select Package Type</option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="mb-3">
+                        <label for="totalVolume">Total Volume</label>
+                        <input type="number" class="form-control" id="totalVolume" name="totalVolume">
+                      </div>
+                      <div class="mb-3">
+                        <label for="totalQuantity">Total Quantity</label>
+                        <input type="number" class="form-control" id="totalQuantity" name="totalQuantity">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>          
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <label><b>Origin Address</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Origin Address</label>
+                </div>
+                <div class="row mt-2">
+                  <input type="search" class="form-control search-icon" id="originAddress" placeholder="Search for Origin Address" autocomplete="off">
+                </div>
+                <div class="row my-3">
+                  <a href="#">Create New Origin Address</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label><b>Origin Port</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Port</label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <select class="form-control" id="port-select">
+                    <option>Select Port</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select> 
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Origin trucking services</b></label>
+                </div>
+                <div class="row mt-3">
+                  Select 'Yes' and flexport will collect your cargo and deliver it to the origin port. This will
+                  incur a charge that is added as an individual line item on your estimate.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>Will you need flexport Origin Trucking Services(origin to port)?</b></label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <div class="btn-group col-md-4" role="group" aria-label="Basic radio toggle button group">
+                    <div class="mx-1">
+                      <input type="radio" class="btn-check" name="originTruckingService" id="btnradio4" value="Yes" autocomplete="off">
+                      <label class="btn btn-outline-secondary" for="btnradio4">Yes</label>
+                    </div>
+                    <div class="mx-1">
+                      <input type="radio" class="btn-check" name="originTruckingService" id="btnradio5" value="No" autocomplete="off">
+                      <label class="btn btn-outline-secondary" for="btnradio5">No</label>
+                    </div>
+                  </div>              
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Destination Address</b></label>
+                </div>
+                <div class="row mt-3">
+                  The destination address requires access to a dock to unload the shipment.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Destination Address</label>
+                </div>
+                <div class="row mt-2">
+                  <input type="search" class="form-control search-icon" id="destinationAddress" placeholder="Search for Origin Address" autocomplete="off">
+                </div>
+                <div class="row my-3">
+                  <a href="#">Create New Destination Address</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Products to be shipped</b></label>
+                </div>
+                <div class="row mt-3">
+                  At least one product is required.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row m-3">
+                  <img src="staticfiles/images/cube-icon.jpg" class="img-fluid mx-auto mt-5" alt="Responsive image"
+                  style="width: 120px; height: 100px;">
+                </div>
+                <div class="row  mt-4">
+                  <div class="text-center h5"><b>Add Products to your shipment here</b></div>              
+                </div>
+                <div class="row mt-1">
+                  <div class="text-center">To add products to your shipment, start by adding products 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="text-center">from your Shopify catalog or manually adding them.</div>
+                </div>
+                <div class="row mt-3 mb-5">
+                  <div class="text-center">
+                    <button type="button" class="btn btn-secondary">Add Products</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Hazardous Materials</b></label>
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>Do any of your products contain the following?</b></label>
+                </div>
+                <div class="row mb-3">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Bateries" name="products" id="flexCheckChecked1">
+                    <label class="form-check-label" for="flexCheckChecked1">
+                      Bateries
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Hazardous Materials" name="products" id="flexCheckChecked2">
+                    <label class="form-check-label" for="flexCheckChecked2">
+                      Hazardous Materials 
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Creams, Liquids, Powders" name="products" id="flexCheckChecked3">
+                    <label class="form-check-label" for="flexCheckChecked3">
+                      Creams, Liquids, Powders
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="None of the above" name="products" id="flexCheckChecked4">
+                    <label class="form-check-label" for="flexCheckChecked4">
+                      None of the above
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Origin Cutoff date</b></label>
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>When your cargo be ready?</b></label>
+                </div>
+                <div class="row">
+                  <label>To provide you the best rates, you must select a date within the next 6 weeks</label>
+                </div>
+                <div class="row my-3">
+                  <input id="daterangepicker1" type="hidden">
+                  <div id="daterangepicker1-container" class="embedded-daterangepicker"></div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row my-3 submit-button-align">
+              <input class="btn btn-success" type="submit" value="Submit Booking Request">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
