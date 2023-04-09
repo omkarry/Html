@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Booking Form">
+    <meta name="keywords" content="Book shipment">
+    <meta name="author" content="Omkar Yadav">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="\staticfiles\css\booking-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="\staticfiles\js\booking-form.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="back mt-3">
+          <div class="back-btn">
+            <i class="fa fa-arrow-left"></i>
+          </div>
+          <div class="back-to">Back to Dashboard</div>
+        </div>
+      </div>
+      <hr>
+      <div class="container px-5">
+        <div class="row">
+          <form id="booking-form">
+            <div class="row">
+              <div class="col-md-4">
+                <h4><b>Create Booking</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 font-weight-bold">
+                <label><b>Booking Name</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Booking name</label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <input type="text" class="form-control" id="booking-name" placeholder="Description of Shipment" autocomplete="off">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <label><b>Involved Parties</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Consignee <i class="fa fa-question-circle"></i></label>
+                </div>
+                <div class="row mt-2">
+                  <select class="form-control" name="select-consignee" id="select-consignee">
+                  </select>                
+                </div>
+                <div class="row mt-4">
+                  <label>Supplier</label>
+                </div>
+                <div class="row mt-2">
+                  <select class="form-control" name="select-supplier" id="select-supplier">
+                  </select>                
+                </div>
+                <div class="row mt-3">
+                  <a href="#">Create New Supplier</a>
+                </div>
+                <div class="row mt-3">
+                  <label>Incoterms <i class="fa fa-question-circle"></i></label>
+                </div>
+                <div class="row mt-2">
+                  <div class="btn-group col-md-4" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio1" value="EXW" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio1">EXW</label>
+                  
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio2" value="FOB" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio2">FOB</label>
+                  
+                    <input type="radio" class="btn-check" name="incoterm" id="btnradio3" value="FCA" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio3">FCA</label>
+                  </div>
+                </div>
+                <div class="row my-3">
+                  <div><a href="#">Contact us </a>if you can not find your incoterms</div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label><b>Cargo Details</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row ml-3 border-bottom mb-3 mt-4">
+                  <button type="button" class="btn btn-border col-md-6" id="lessThanBtn">Less Than Container</button>
+                  <button type="button" class="btn btn-border col-md-6" id="fullBtn">Full Containers</button>
+                </div>
+                <div id="lessThanContainer">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="totalWeight">Total Weight</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" id="lessThanContainerTotalWeight" name="totalWeight">
+                          <div class="input-group-append">
+                              <span class="input-group-text bg-white"> kg </span>
+                          </div>
+                       </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="packageType">Package Type</label>
+                        <select class="form-control" name="packageType" id="lessThanContainerPackageType">
+                          <option>Select Package Type</option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="mb-3">
+                        <label for="totalVolume">Total Volume</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" id="lessThanContainerTotalVolume" name="totalVolume">
+                          <div class="input-group-append">
+                              <span class="input-group-text bg-white">cbm</span>
+                          </div>
+                       </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="totalQuantity">Total Quantity</label>
+                        <input type="number" class="form-control" id="lessThanContainerTotalQuantity" name="totalQuantity">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="fullContainer" style="display: none;">
+                  <div class="row">
+                    <div class="mb-3 col-md-6">
+                      <label for="numContainers">Number of Containers</label>
+                      <input type="number" class="form-control" id="numContainers" name="numContainers">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="containerType">Container Type</label>
+                      <select class="form-control" name="containerType" id="containerType">
+                        <option>Select Container Type</option>
+                        <option>20 ft</option>
+                        <option>40 ft</option>
+                        <option>60 ft</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="totalWeight">Total Weight</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" id="totalWeight" name="totalWeight">
+                          <div class="input-group-append">
+                            <span class="input-group-text bg-white"> kg </span>
+                          </div>
+                       </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="packageType">PackageType</label>
+                        <select class="form-control" name="packageType" id="packageType">
+                          <option>Select Package Type</option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div class="mb-3">
+                        <label for="totalVolume">Total Volume</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" id="totalVolume" name="totalVolume">
+                          <div class="input-group-append">
+                              <span class="input-group-text bg-white">cbm</span>
+                          </div>
+                       </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="totalQuantity">Total Quantity</label>
+                        <input type="number" class="form-control" id="totalQuantity" name="totalQuantity">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>          
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <label><b>Origin Address</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Origin Address</label>
+                </div>
+                <div class="row mt-2">
+                  <input type="search" class="form-control search-icon" id="originAddress" placeholder="Search for Origin Address" autocomplete="off">
+                </div>
+                <div class="row my-3">
+                  <a href="#">Create New Origin Address</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label><b>Origin Port</b></label>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Port</label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <select class="form-control" id="port-select">
+                    <option>Select Port</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select> 
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Origin trucking services</b></label>
+                </div>
+                <div class="row mt-3">
+                  Select 'Yes' and flexport will collect your cargo and deliver it to the origin port. This will
+                  incur a charge that is added as an individual line item on your estimate.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>Will you need flexport Origin Trucking Services(origin to port)?</b></label>
+                </div>
+                <div class="row mt-2 mb-3">
+                  <div class="btn-group col-md-4" role="group" aria-label="Basic radio toggle button group">
+                    <div class="mx-1">
+                      <input type="radio" class="btn-check" name="originTruckingService" id="btnradio4" value="Yes" autocomplete="off">
+                      <label class="btn btn-outline-secondary" for="btnradio4">Yes</label>
+                    </div>
+                    <div class="mx-1">
+                      <input type="radio" class="btn-check" name="originTruckingService" id="btnradio5" value="No" autocomplete="off">
+                      <label class="btn btn-outline-secondary" for="btnradio5">No</label>
+                    </div>
+                  </div>              
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Destination Address</b></label>
+                </div>
+                <div class="row mt-3">
+                  The destination address requires access to a dock to unload the shipment.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label>Destination Address</label>
+                </div>
+                <div class="row mt-2">
+                  <input type="search" class="form-control search-icon" id="destinationAddress" placeholder="Search for Origin Address" autocomplete="off">
+                </div>
+                <div class="row my-3">
+                  <a href="#">Create New Destination Address</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Products to be shipped</b></label>
+                </div>
+                <div class="row mt-3">
+                  At least one product is required.
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row m-3">
+                  <img src="staticfiles/images/cube-icon.jpg" class="img-fluid mx-auto mt-5" alt="Responsive image"
+                  style="width: 120px; height: 100px;">
+                </div>
+                <div class="row  mt-4">
+                  <div class="text-center h5"><b>Add Products to your shipment here</b></div>              
+                </div>
+                <div class="row mt-1">
+                  <div class="text-center">To add products to your shipment, start by adding products 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="text-center">from your Shopify catalog or manually adding them.</div>
+                </div>
+                <div class="row mt-3 mb-5">
+                  <div class="text-center">
+                    <button type="button" class="btn btn-secondary">Add Products</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Hazardous Materials</b></label>
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>Do any of your products contain the following?</b></label>
+                </div>
+                <div class="row mb-3">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Bateries" name="products" id="flexCheckChecked1">
+                    <label class="form-check-label" for="flexCheckChecked1">
+                      Bateries
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Hazardous Materials" name="products" id="flexCheckChecked2">
+                    <label class="form-check-label" for="flexCheckChecked2">
+                      Hazardous Materials 
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="Creams, Liquids, Powders" name="products" id="flexCheckChecked3">
+                    <label class="form-check-label" for="flexCheckChecked3">
+                      Creams, Liquids, Powders
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" value="None of the above" name="products" id="flexCheckChecked4">
+                    <label class="form-check-label" for="flexCheckChecked4">
+                      None of the above
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="row">
+                  <label><b>Origin Cutoff date</b></label>
+                </div>
+              </div>
+              <div class="col-md-8 input-box">
+                <div class="row mt-4">
+                  <label><b>When your cargo be ready?</b></label>
+                </div>
+                <div class="row">
+                  <label>To provide you the best rates, you must select a date within the next 6 weeks</label>
+                </div>
+                <div class="row my-3">
+                  <input id="daterangepicker1" type="hidden">
+                  <div id="daterangepicker1-container" class="embedded-daterangepicker"></div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row my-3 button-align">
+              <input class="btn btn-success" type="submit" value="Submit Booking Request">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 my-3">
+          <a href="#" class="btn btn-primary btn-contact"><i class="fa fa-comment"></i> Contact Support</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const consignees = new Array('Select Consignee', 'Option1', 'Option2', 'Option3', 'Option4', 'Option5',);
+      const suppliers = new Array('Select supplier', 'Option1', 'Option2', 'Option3', 'Option4', 'Option5',);
+
+      selectConsignee = document.getElementById("select-consignee");
+      selectConsignee.options.length = 0;
+      for (i=0; i<consignees.length; i++) 
+      {
+      selectConsignee.options[selectConsignee.length] = new Option(consignees[i], consignees[i]);
+      }
+            
+      selectSuplier = document.getElementById("select-supplier");
+      selectSuplier.options.length = 0;
+      for (i=0; i<suppliers.length; i++) 
+      {
+      selectSuplier.options[selectSuplier.length] = new Option(suppliers[i], suppliers[i]);
+      } 
+
+      var picker = $('#daterangepicker1').daterangepicker({
+        "parentEl": "#daterangepicker1-container", 
+        "autoApply": true,
+      });
+      picker.on('apply.daterangepicker', function(ev, picker) {
+        $("#daterangepicker-result").html('Selected date range: ' + picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD'));
+      });
+      picker.data('daterangepicker').hide = function () {};
+      picker.data('daterangepicker').show();
+
+      document.getElementById('lessThanContainer').style.display = 'block';
+      document.getElementById('fullContainer').style.display = 'none';
+      document.getElementById('lessThanBtn').addEventListener('click', function() {
+        document.getElementById('lessThanContainer').style.display = 'block';
+        document.getElementById('fullContainer').style.display = 'none';
+        document.getElementById('numContainers').value = '';
+        document.getElementById('containerType').value = 'Select Container Type';
+        document.getElementById('totalWeight').value = '';
+        document.getElementById('packageType').value = 'Select Package Type';
+        document.getElementById('totalVolume').value = '';
+        document.getElementById('totalQuantity').value = '';
+      });
+
+      document.getElementById('fullBtn').addEventListener('click', function() {
+        document.getElementById('lessThanContainer').style.display = 'none';
+        document.getElementById('fullContainer').style.display = 'block';
+        document.getElementById('lessThanContainerTotalWeight').value = '';
+        document.getElementById('lessThanContainerPackageType').value = 'Select Package Type';
+        document.getElementById('lessThanContainerTotalVolume').value = '';
+        document.getElementById('lessThanContainerTotalQuantity').value = '';
+      });
+
+      document.getElementById("booking-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var bookingName = document.getElementById("booking-name").value;
+        var consignee = document.getElementById("select-consignee").value;
+        var supplier = document.getElementById("select-supplier").value;
+        var incoterm =  document.querySelector('input[name="incoterm"]:checked')?.value;
+        var lessThanContainer = document.getElementById("lessThanContainer").style.display;
+        var lessThanContainerTotalWeight = document.getElementById("lessThanContainerTotalWeight").value;
+        var lessThanContainerPackageType = document.getElementById("lessThanContainerPackageType").value; 
+        var lessThanContainerTotalVolume = document.getElementById("lessThanContainerTotalVolume").value;
+        var lessThanContainerTotalQuantity = document.getElementById("lessThanContainerTotalQuantity").value;
+        var fullContainer = document.getElementById("fullContainer").style.display;
+        var numberOfContainer = document.getElementById("numContainers").value;
+        var containerType = document.getElementById("containerType").value; 
+        var totalWeight = document.getElementById("totalWeight").value;
+        var packageType = document.getElementById("packageType").value; 
+        var totalVolume = document.getElementById("totalVolume").value;
+        var totalQuantity = document.getElementById("totalQuantity").value;
+        var originAddress = document.getElementById("originAddress").value;
+        var port = document.getElementById("port-select").value;
+        var originTruckingService = document.querySelector('input[name="originTruckingService"]:checked')?.value;
+        var destinationAddress = document.getElementById("destinationAddress").value;
+        var products = document.querySelectorAll('input[name="products"]:checked');
+        var checkboxValues = Array.from(products).map(function (checkbox) {
+          return checkbox.value;
+        });
+        var originCutoffDate = document.getElementById("daterangepicker1").value;
+
+        if(isNaN(bookingName) || bookingName === "")
+        {
+          alert("Booking name should be a number! It is compulsory field");
+          return false;
+        }
+        else if(consignee === "Select Consignee")
+        {
+          alert("Please select the consignee.");
+          return false
+        }
+        else if(typeof incoterm === 'undefined')
+        {
+          alert("Please select incoterm.");
+          return false;
+        }
+        // else if()
+        // {
+        else if(fullContainer === 'block' && numberOfContainer === "")
+        {
+          alert("Please enter number of containers");
+          return false;
+        }
+        else if(fullContainer === 'block' && containerType === 'Select Container Type')
+        {
+          alert("Please select container type");
+          return false;
+        }
+        else if(fullContainer === 'block' && totalWeight === '')
+        {
+          alert("Please enter total weight");
+          return false;
+        }
+        else if(fullContainer === 'block' && packageType === 'Select Package Type')
+        {
+          alert("Please select package type");
+          return false;
+        }
+        else if(fullContainer === 'block' && totalVolume === '')
+        {
+          alert("Please enter total volume");
+          return false;
+        }
+        else if(fullContainer === 'block' && totalQuantity === '')
+        {
+          alert("Please enter total quantity");
+          return false;
+        }
+        // }
+        // else if(lessThanContainer === 'block')
+        // {
+        if(lessThanContainer === 'block' && lessThanContainerTotalWeight === '')
+        {
+          alert("Please enter total weight");
+          return false;
+        }
+        else if(lessThanContainer === 'block' && lessThanContainerPackageType === 'Select Package Type')
+        {
+          alert("Please select package type");
+          return false;
+        }
+        else if(lessThanContainer === 'block' && lessThanContainerTotalVolume === '')
+        {
+          alert("Please enter total volume");
+          return false;
+        }
+        else if(lessThanContainer === 'block' && lessThanContainerTotalQuantity === '')
+        {
+          alert("Please enter total quantity");
+          return false;
+        }
+        // }
+        else if(originAddress === '')
+        {
+          alert("Please select origin address");
+          return false;
+        }
+        else if(port === 'Select Port')
+        {
+          alert("Please select port");
+          return false;
+        }
+        else if(destinationAddress === '')
+        {
+          alert("Please select destination address");
+          return false;
+        }
+        else if(checkboxValues.length >= 2 && checkboxValues.includes('None of the above'))
+        {
+          alert("Please select options correctly");
+          return false;
+        }
+        else if(checkboxValues.length == 0)
+        {
+          alert("Please select hazardous products");
+          return false;
+        }
+        else
+        {
+          alert("Booking request submitted successfully...");
+          console.log("------------------------------");
+          console.log("\t-- Booking Details --");
+          console.log("------------------------------");
+          console.log("Booking Name: " + bookingName);
+          console.log("Consignee: " + consignee);
+          if (!(supplier === "Select supplier")){
+          console.log("Supplier: " + supplier);
+          }
+          else{
+          console.log("Supplier: Not available");
+          }
+          console.log("Incoterm: " + incoterm);
+          if (lessThanContainer === "block")
+          {
+            console.log("Container: Less Than Container:");
+            console.log("\tTotal Weight: " + lessThanContainerTotalWeight);
+            console.log("\tTotal Volume: " + lessThanContainerTotalVolume);
+            console.log("\tPackage Type: " + lessThanContainerPackageType);
+            console.log("\tTotal Quantity: " + lessThanContainerTotalQuantity);
+          }
+          else
+          {
+            console.log("Container: Full Container:");
+            console.log("\tNumber of Containers: " + numberOfContainer);
+            console.log("\tContainer Type: " + containerType);
+            console.log("\tTotal Weight: " + totalWeight);
+            console.log("\tTotal Volume: " + totalVolume);
+            console.log("\tPackage Type: " + packageType);
+            console.log("\tTotal Quantity: " + totalQuantity);
+          }
+          console.log("Origin Address: " + originAddress);
+          console.log("Origin Port: " + port);
+          if(typeof originTruckingService === 'undefined')
+          {
+            console.log("Need Origin Trucking Services: No");
+          }
+          else{
+            console.log("Need Origin Trucking Services: " + originTruckingService);
+          }
+          console.log("Destination Address: " + destinationAddress);
+          console.log("Hazardous Materials: ");
+          if (checkboxValues.includes('None of the above'))
+          {
+            console.log("Products do not contain any hazardous material");
+          }
+          else
+          {
+            for (var i = 0; i < checkboxValues.length; i++)
+            {
+              console.log("\t" + checkboxValues[i]);
+            }
+          }
+          console.log("Origin Cutoff Date: " + originCutoffDate);
+          return true;
+        }
+      });
+
+      function autocomplete(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          if (!x) return false;
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+
+    var addresses = ["Pune", "Mumbai", "Delhi", "Chennai", "Kolkata"]
+    autocomplete(document.getElementById("destinationAddress"), addresses);
+    autocomplete(document.getElementById("originAddress"), addresses);
+    </script>
+  </body>
+</html>
